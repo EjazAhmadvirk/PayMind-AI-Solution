@@ -44,7 +44,8 @@ def get_ai_reply(message: str, history):
         " Keep answers practical and technically grounded — focus on architecture, integration, and real-world use cases."
     )
 
-    # Domyślnie użyj modelu gpt-4 (zgodnie z przykładem AIML API); można nadpisać przez ENV
+    # Domyślnie użyj modelu gpt-4 (zgodnie z przykładem AIML API); można nadpisać przez ENV 
+    # all keys and other important thngs
     model = os.getenv('AIMLAPI_MODEL', os.getenv('OPENAI_MODEL', 'gpt-4'))
 
     messages = [{"role": "system", "content": system_prompt}] + trimmed + [
