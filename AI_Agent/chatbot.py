@@ -3,7 +3,7 @@ import requests
 
 # --- AI Chatbot helpers ---
 try:
-    # Prefer the new SDK if available
+    # Prefer the new SDK if available  
     from openai import OpenAI  # type: ignore
     _HAS_OPENAI_V1 = True
 except Exception:
@@ -15,7 +15,7 @@ def get_ai_reply(message: str, history):
     """Return AI-generated reply if OPENAI/AIMLAPI key is configured; otherwise None.
     Uses a concise, safe system prompt with site context (Polish by default).
     """
-    # Prefer AIMLAPI creds if provided, fall back to OPENAI_API_KEY for compatibility
+    # Prefer AIMLAPI creds if provided, fall back to OPENAI_API_KEY for compatibility, here use open ai key 
     api_key = os.getenv('AIMLAPI_API_KEY') or os.getenv('OPENAI_API_KEY')
     base_url = os.getenv('AIMLAPI_BASE_URL', 'https://api.aimlapi.com/v1')
     if not api_key:
