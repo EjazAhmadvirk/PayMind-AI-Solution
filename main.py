@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from dotenv import load_dotenv
 
-# Import blueprints
+# here we  Import blueprints
 from routes.health import health_bp
 from routes.wallet_sets import wallet_sets_bp
 from routes.wallets import wallets_bp
@@ -18,12 +18,12 @@ from routes.chatbot import chatbot_bp
 app = Flask(__name__)
 load_dotenv()
 
-# Main documentation page
+# Main documentation page is this 
 @app.route('/')
 def index():
     return render_template('api_docs.html')
 
-# Register blueprints
+# Register blueprints here
 app.register_blueprint(health_bp)
 app.register_blueprint(wallet_sets_bp)
 app.register_blueprint(wallets_bp)
